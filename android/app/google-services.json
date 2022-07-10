@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "192784026391",
+    "project_id": "buddyscript-551b1",
+    "storage_bucket": "buddyscript-551b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:192784026391:android:1bafdce4e6129e801ec552",
+        "android_client_info": {
+          "package_name": "com.buddyscripts.buddyscripts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "192784026391-515vh8s3lqohlo11d9ei6vc7qq4hoptp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJLINyEtsSwBPTaR-FgeUJVZsiEpSMSXA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "192784026391-515vh8s3lqohlo11d9ei6vc7qq4hoptp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
