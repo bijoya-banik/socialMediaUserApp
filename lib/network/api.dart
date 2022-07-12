@@ -67,6 +67,7 @@ static const DIVINE9 = 'http://10.0.2.2:3333/app/'; // Live Production API URL
 
   //search
   static search(String str, {String tab = 'feed'}) => 'group/globalSearch?str=$str&tab=$tab';
+ // static peopleSearch(String str) => 'profile/getPeopleListBySearch?searchTxt=$str';
 
   // like
   static const likeFeed = 'feed/createLike';

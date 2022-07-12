@@ -61,9 +61,9 @@ class _KBottomNavigationBarState extends ConsumerState<KBottomNavigationBar> wit
     _currentIndex = widget.index;
     _bottomNavPages = [
       HomeScreen(initialIndex: tab),
-      // const ConversationsScreen(),
+       const ConversationsScreen(),
       // const NotificationScreen(),
-      const AccountScreen(),
+     // const AccountScreen(),
          const NotificationScreen(),
    //   const AccountScreen(),
       const AccountScreen(),

@@ -130,33 +130,33 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                             File? picked = await AssetService.pickMedia(true, context, false, true);
                                             if (picked != null) {
                                               await ref.read(userProvider.notifier).uploadUserPicture(image: [picked]);
-                                              KDialog.kShowDialog(
-                                                  context,
-                                                  ConfirmationDialogContent(
-                                                    title: 'Profile picture updated successfully!',
-                                                    titleShow: true,
-                                                    titleColor: KColor.primary,
-                                                    customBody: Padding(
-                                                      padding: const EdgeInsets.only(top: 20),
-                                                      child: Align(
-                                                          alignment: Alignment.center,
-                                                          child: Text(
-                                                            'Share your update to News Feed?',
-                                                            style: KTextStyle.bodyText3.copyWith(color: KColor.black87, fontWeight: FontWeight.bold),
-                                                          )),
-                                                    ),
-                                                    onPressedCallback: () async {
-                                                      ref.read(feedProvider.notifier).createFeed(
-                                                            feedText: "",
-                                                            images: [picked],
-                                                            activityType: 'feed',
-                                                            feedPrivacy: 'Public',
-                                                            feedType: FeedType.PROFILE,
-                                                            feelingsModel: FeelingsModel(name: 'updated her profile picture', icon: ""),
-                                                          );
-                                                      Navigator.pop(context);
-                                                    },
-                                                  ));
+                                              // KDialog.kShowDialog(
+                                              //     context,
+                                              //     ConfirmationDialogContent(
+                                              //       title: 'Profile picture updated successfully!',
+                                              //       titleShow: true,
+                                              //       titleColor: KColor.primary,
+                                              //       customBody: Padding(
+                                              //         padding: const EdgeInsets.only(top: 20),
+                                              //         child: Align(
+                                              //             alignment: Alignment.center,
+                                              //             child: Text(
+                                              //               'Share your update to News Feed?',
+                                              //               style: KTextStyle.bodyText3.copyWith(color: KColor.black87, fontWeight: FontWeight.bold),
+                                              //             )),
+                                              //       ),
+                                              //       onPressedCallback: () async {
+                                              //         ref.read(feedProvider.notifier).createFeed(
+                                              //               feedText: "",
+                                              //               images: [picked],
+                                              //               activityType: 'feed',
+                                              //               feedPrivacy: 'Public',
+                                              //               feedType: FeedType.PROFILE,
+                                              //               feelingsModel: FeelingsModel(name: 'updated her profile picture', icon: ""),
+                                              //             );
+                                              //         Navigator.pop(context);
+                                              //       },
+                                              //     ));
                                             }
                                           },
                                           child: Container(

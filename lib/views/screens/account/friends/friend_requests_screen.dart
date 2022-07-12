@@ -18,7 +18,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class FriendRequestsScreen extends ConsumerWidget {
   FriendRequestsScreen({Key? key}) : super(key: key);
 
-  List friendTabs = ['Discover', 'My Friends'];
+ // List friendTabs = ['Discover', 'My Friends'];
+  List friendTabs = [ 'All Friends'];
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -45,9 +46,10 @@ class FriendRequestsScreen extends ConsumerWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 sliver: SliverToBoxAdapter(
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  //  crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
+                        alignment: Alignment.topRight,
                         width: MediaQuery.of(context).size.width,
                         height: KSize.getHeight(context, 50),
                         padding: const EdgeInsets.symmetric(vertical: 5),
@@ -69,7 +71,8 @@ class FriendRequestsScreen extends ConsumerWidget {
                               },
                               child: Center(
                                 child: Container(
-                                  decoration: BoxDecoration(color: KColor.textBackground, borderRadius: BorderRadius.circular(8)),
+                                  decoration: BoxDecoration(
+                                    color: KColor.primary.withOpacity(0.2), borderRadius: BorderRadius.circular(8)),
                                   padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
                                   margin: const EdgeInsets.only(right: 10),
                                   child: Text(friendTabs[index], style: KTextStyle.subtitle2.copyWith(color: KColor.black)),
@@ -80,7 +83,12 @@ class FriendRequestsScreen extends ConsumerWidget {
                         ),
                       ),
                       SizedBox(height: KSize.getHeight(context, 15)),
-                      Text('Friend Requests', style: KTextStyle.headline5.copyWith(fontWeight: FontWeight.bold, color: KColor.black)),
+                      Container(
+                         alignment: Alignment.topLeft,
+                        child: Text(
+                          'Friend Requests', 
+                        style: KTextStyle.headline5.copyWith(fontWeight: FontWeight.bold, color: KColor.black)),
+                      ),
                       SizedBox(height: KSize.getHeight(context, 20)),
                       if (friendRequestsState.friendRequestsModel.data!.isEmpty)
                         SizedBox(

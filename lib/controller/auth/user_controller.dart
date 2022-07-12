@@ -267,6 +267,7 @@ class UserController extends StateNotifier<UserState> {
 
         if (type == 'profile_pic') userData?.user?.profilePic = responseBody['picture'];
         state = UserSuccessState(userData!);
+        toast("Profile picture updated successfully", bgColor:KColor.green);
         NavigationService.popNavigate();
       } else {
         state = const ErrorState();
