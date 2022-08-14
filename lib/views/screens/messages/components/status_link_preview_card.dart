@@ -1,4 +1,5 @@
 import 'package:buddyscripts/models/chats/chat_model.dart';
+import 'package:buddyscripts/network/api.dart';
 import 'package:buddyscripts/views/styles/b_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +44,7 @@ class StatusLinkPreviewCard extends StatelessWidget {
                     child: linkMeta?.image == null
                         ? Container()
                         : Image.network(
-                            linkMeta?.image,
+                             API.baseUrl+linkMeta?.image,
                             fit: BoxFit.cover,
                             width: MediaQuery.of(context).size.width * 0.6,
                             height: KSize.getHeight(context, 120),

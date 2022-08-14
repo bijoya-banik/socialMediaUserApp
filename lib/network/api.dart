@@ -2,16 +2,16 @@
 
 class API {
   //static const DIVINE9 = 'https://api.divine9connections.com/app/'; // Live Production API URL
-  //static const DIVINE9 = 'http://192.168.175.224:3333/app/'; // Live Production API URL
-static const DIVINE9 = 'http://10.0.2.2:3333/app/'; // Live Production API URL
+  static const DIVINE9 = 'http://192.168.108.224:3333/app/'; // Live Production API URL
+  static const baseUrl = ''; // Live Production API URL
+//static const DIVINE9 = 'http://10.0.2.2:3333/app/'; // Live Production API URL
 
-//php artisan serve --host 192.168.42.100 --port 8000
-//php artisan serve --host 192.168.41.224 --port 3333
+
 //final String _url = 'http://192.168.42.100:8000';
 //192.168.41.224
   //static const DIVINE9Socket = 'https://connect.divine9connections.com'; // Live Production API URL
   //static const DIVINE9Socket = 'http://127.0.0.1:3333'; 
-   static const DIVINE9Socket = 'http://192.168.175.224:3300'; // Live Production API URL
+   static const DIVINE9Socket = 'http://192.168.108.224:3300'; // Live Production API URL
 
   static const SOCKET_BASE = DIVINE9Socket;
   static const BASE =  DIVINE9;

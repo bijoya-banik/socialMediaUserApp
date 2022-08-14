@@ -126,17 +126,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     isPasswordField: true,
                     validator: (v) => Validators.newPasswordValidator(v),
                   ),
-                  SizedBox(height: KSize.getHeight(context, 8)),
-                  KDropdownField(
-                    dropdownFieldOptions: genderList,
-                    disabledHint: 'Select gender',
-                    controller: genderController,
-                    callbackFunction: () {},
-                    isObject: false,
-                    isCallback: true,
-                    validator: (v) => Validators.dropdownFieldValidator(
-                        "optional", 'Select Gender'), // Optional value
-                  ),
+                  // SizedBox(height: KSize.getHeight(context, 8)),
+                  // KDropdownField(
+                  //   dropdownFieldOptions: genderList,
+                  //   disabledHint: 'Select gender',
+                  //   controller: genderController,
+                  //   callbackFunction: () {},
+                  //   isObject: false,
+                  //   isCallback: true,
+                  //   validator: (v) => Validators.dropdownFieldValidator(
+                  //       "optional", 'Select Gender'), // Optional value
+                  // ),
                   SizedBox(height: KSize.getHeight(context, 10)),
                   // InkWell(
                   //   onTap: () {

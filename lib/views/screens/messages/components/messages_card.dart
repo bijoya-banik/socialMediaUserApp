@@ -2,6 +2,7 @@ import 'package:buddyscripts/constants/shared_preference_constant.dart';
 import 'package:buddyscripts/controller/chat/chat_controller.dart';
 import 'package:buddyscripts/custom_plugin/video_thumbnail_generator.dart';
 import 'package:buddyscripts/models/chats/chat_model.dart';
+import 'package:buddyscripts/network/api.dart';
 import 'package:buddyscripts/services/app_mode.dart';
 import 'package:buddyscripts/services/date_time_service.dart';
 import 'package:buddyscripts/services/navigation_service.dart';
@@ -332,7 +333,7 @@ class _MessagesCardState extends State<MessagesCard> {
                                                 borderRadius: const BorderRadius.all(Radius.circular(6)),
                                                 child: Image.network(
                                                   //  "https://media3.giphy.com/media/JxhFGtYWZuZA0C1MdY/giphy.gif?cid=fe35a745jk0ahvyqf7e23asjqi4xc2x20qhxk19jrbsjzmuc&rid=giphy.gif&ct=g",
-                                                  widget.chat.files![index].fileLoc!,
+                                                  API.baseUrl+ widget.chat.files![index].fileLoc!,
                                                   height: MediaQuery.of(context).size.width * 0.7,
                                                   width: MediaQuery.of(context).size.width * 0.65,
                                                   fit: BoxFit.cover,
@@ -374,7 +375,7 @@ class _MessagesCardState extends State<MessagesCard> {
                                                               child: ClipRRect(
                                                                 borderRadius: const BorderRadius.all(Radius.circular(6)),
                                                                 child: Image.network(
-                                                                  widget.chat.files![ind].fileLoc!,
+                                                                  API.baseUrl+ widget.chat.files![ind].fileLoc!,
                                                                   height: MediaQuery.of(context).size.width *
                                                                       (widget.chat.files!.length < 4 ? 0.175 : 0.25),
                                                                   width: MediaQuery.of(context).size.width *
@@ -527,7 +528,7 @@ class _MessagesCardState extends State<MessagesCard> {
                             bottomRight: Radius.circular(!isSelf ? 15 : 0)),
                         child: widget.chat.replyFiles![ind].type == "image"
                             ? Image.network(
-                                widget.chat.replyFiles![ind].fileLoc!,
+                                API.baseUrl+ widget.chat.replyFiles![ind].fileLoc!,
                                 height: MediaQuery.of(context).size.width * 0.15,
                                 width: MediaQuery.of(context).size.width * 0.15,
                                 fit: BoxFit.cover,

@@ -5,6 +5,7 @@ import 'package:buddyscripts/controller/story/state/story_state.dart';
 import 'package:buddyscripts/controller/story/story_controller.dart';
 import 'package:buddyscripts/custom_plugin/video_thumbnail_generator.dart';
 import 'package:buddyscripts/models/story/story_model.dart';
+import 'package:buddyscripts/network/api.dart';
 import 'package:buddyscripts/services/app_mode.dart';
 import 'package:buddyscripts/views/screens/home/create_feed_screen.dart';
 import 'package:buddyscripts/views/screens/story/story_user_slider_screen.dart';
@@ -76,7 +77,7 @@ class _StoryCardState extends State<StoryCard> {
                                 fit: BoxFit.cover,
                               )
                             : Image.network(
-                                ref.read(userProvider.notifier).userData!.user!.profilePic!,
+                               API.baseUrl+  ref.read(userProvider.notifier).userData!.user!.profilePic!,
                                 height: 35,
                                 width: 35,
                                 fit: BoxFit.cover,
@@ -107,7 +108,7 @@ class _StoryCardState extends State<StoryCard> {
                               )
                             : widget.storyData.type == "image"
                                 ? Image.network(
-                                    widget.storyData.data,
+                                   API.baseUrl+  widget.storyData.data,
                                     height: KSize.getHeight(context, 200),
                                     width: 115,
                                     fit: BoxFit.cover,
@@ -144,7 +145,7 @@ class _StoryCardState extends State<StoryCard> {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(100.0),
                                 child: Image.network(
-                                  widget.storyData.profilePic,
+                                API.baseUrl+   widget.storyData.profilePic,
                                   height: 35,
                                   width: 35,
                                   fit: BoxFit.cover,

@@ -1,5 +1,6 @@
 import 'package:buddyscripts/controller/event/event_feed_controller.dart';
 import 'package:buddyscripts/models/event/events_model.dart';
+import 'package:buddyscripts/network/api.dart';
 import 'package:buddyscripts/services/date_time_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -27,7 +28,7 @@ class EventCard extends ConsumerWidget {
                   ClipRRect(
                     borderRadius: const BorderRadius.only(topLeft: Radius.circular(6), topRight: Radius.circular(8)),
                     child: Image.network(
-                      eventData!.cover!,
+                      API.baseUrl+eventData!.cover!,
                       height: KSize.getHeight(context, 150),
                       width: MediaQuery.of(context).size.width,
                       fit: BoxFit.cover,

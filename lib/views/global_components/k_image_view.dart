@@ -1,3 +1,4 @@
+import 'package:buddyscripts/network/api.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:buddyscripts/views/global_components/k_cupertino_nav_bar.dart';
@@ -22,7 +23,7 @@ class KImageView extends StatelessWidget {
           margin: const EdgeInsets.only(bottom: 16),
           alignment: Alignment.center,
           child: Image.network(
-            url!,
+            API.baseUrl+url!,
             loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
               if (loadingProgress == null) return child;
               return Center(

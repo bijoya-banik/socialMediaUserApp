@@ -3,6 +3,7 @@ import 'package:buddyscripts/controller/feelings_activities/feelings_controller.
 import 'package:buddyscripts/controller/feelings_activities/state/activities_state.dart';
 import 'package:buddyscripts/controller/feelings_activities/sub_activities_controller.dart';
 import 'package:buddyscripts/models/feelings_activities/feelings_model.dart';
+import 'package:buddyscripts/network/api.dart';
 import 'package:buddyscripts/services/app_mode.dart';
 import 'package:buddyscripts/services/debouncer.dart';
 import 'package:buddyscripts/views/global_components/k_content_unavailable_component.dart';
@@ -53,7 +54,7 @@ class _ActivityTabState extends ConsumerState<ActivityTab> {
                       Row(
                         children: [
                           Image.network(
-                            feelingData!.icon!,
+                           API.baseUrl+  feelingData!.icon!,
                             height: 25,
                             width: 25,
                           ),

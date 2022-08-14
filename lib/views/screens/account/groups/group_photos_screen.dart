@@ -1,5 +1,6 @@
 import 'package:buddyscripts/controller/group/group_photos_controller.dart';
 import 'package:buddyscripts/controller/group/state/group_photos_state.dart';
+import 'package:buddyscripts/network/api.dart';
 import 'package:buddyscripts/services/navigation_service.dart';
 import 'package:buddyscripts/views/global_components/k_content_unavailable_component.dart';
 import 'package:buddyscripts/views/global_components/k_cupertino_nav_bar.dart';
@@ -54,7 +55,7 @@ class GroupPhotosScreen extends StatelessWidget {
                                     children: [
                                       ClipRRect(
                                         borderRadius: BorderRadius.circular(6),
-                                        child: Image.network(
+                                        child: Image.network(API.baseUrl+
                                           groupPhotosState.groupPhotosModel.photos![index].fileLoc!,
                                           height: KSize.getHeight(context, 125),
                                           width: MediaQuery.of(context).size.width * 0.29,

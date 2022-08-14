@@ -295,7 +295,7 @@ class UserController extends StateNotifier<UserState> {
         'password': password.trim(),
         'password_confirmation': password.trim(),
         'agree': agree,
-        if (gender != "Select Gender") 'gender': gender,
+       // if (gender != "Select Gender") 'gender': gender,
       };
 
       try {
@@ -332,9 +332,15 @@ class UserController extends StateNotifier<UserState> {
       responseBody = await Network.handleResponse(await Network.postRequest(API.login, requestBody, requireToken: false));
 
       if (responseBody != null) {
-print("djkhd hdjh jhdegfjhdgffrggggggggggggg"); 
+
         print(responseBody['token']);
+
         if (responseBody['token'] != null) {
+          
+        if(responseBody['admin_status']=='admin'){
+          toast("You are not a user",bgColor: KColor.red);
+        }
+        else{
           state = const LoginSuccessState();
           setValue(LOGGED_IN, true);
           setValue(TOKEN, responseBody['token']);
@@ -350,6 +356,7 @@ print("djkhd hdjh jhdegfjhdgffrggggggggggggg");
           ref!.read(initDataProvider.notifier).fetchData();
 
           NavigationService.navigateToReplacement(SlideLeftRoute(page: const KBottomNavigationBar()));
+        }
         } else {
           state = const UserUnverifiedState();
         }

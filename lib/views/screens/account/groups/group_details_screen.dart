@@ -15,6 +15,7 @@ import 'package:buddyscripts/controller/group/state/group_state.dart';
 import 'package:buddyscripts/controller/pagination/group/group_feed_tab.dart';
 import 'package:buddyscripts/controller/pagination/scroll_state.dart';
 import 'package:buddyscripts/models/group/group_feed_model.dart';
+import 'package:buddyscripts/network/api.dart';
 import 'package:buddyscripts/services/app_mode.dart';
 import 'package:buddyscripts/services/asset_service.dart';
 import 'package:buddyscripts/views/global_components/create_feed_card.dart';
@@ -117,7 +118,7 @@ class GroupDetailsScreen extends ConsumerWidget {
                                   child: ClipRRect(
                                     borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(8), bottomRight: Radius.circular(8)),
                                     child: Image.network(
-                                      groupFeedData.basicOverView!.cover!,
+                                      API.baseUrl+groupFeedData.basicOverView!.cover!,
                                       height: MediaQuery.of(context).size.height * 0.345,
                                       width: MediaQuery.of(context).size.width,
                                       fit: BoxFit.cover,

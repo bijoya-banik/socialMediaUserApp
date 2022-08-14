@@ -1,4 +1,5 @@
 import 'package:buddyscripts/models/feed/feed_model.dart';
+import 'package:buddyscripts/network/api.dart';
 import 'package:buddyscripts/views/styles/b_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,7 @@ class FeedLinkPreviewWidget extends StatelessWidget {
                     child: linkMetaData?.image == null || linkMetaData?.image == "" || !(linkMetaData?.image.contains('https://'))
                         ? Container()
                         : Image.network(
-                            linkMetaData?.image,
+                           API.baseUrl+ linkMetaData?.image,
                             fit: BoxFit.cover,
                             width: MediaQuery.of(context).size.width / 4,
                             height: KSize.getHeight(context, 120),

@@ -12,6 +12,7 @@ import 'package:buddyscripts/controller/profile/profile_videos_controller.dart';
 import 'package:buddyscripts/models/feelings_activities/feelings_model.dart';
 import 'package:buddyscripts/models/profile/profile_feed_model.dart';
 import 'package:buddyscripts/models/profile/profile_overview_model.dart';
+import 'package:buddyscripts/network/api.dart';
 import 'package:buddyscripts/services/app_mode.dart';
 import 'package:buddyscripts/views/global_components/create_feed_card.dart';
 import 'package:buddyscripts/views/global_components/dialogs/confirmation_dialog_content.dart';
@@ -89,7 +90,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                   child: ClipRRect(
                                     borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(8), bottomRight: Radius.circular(8)),
                                     child: Image.network(
-                                      profileFeedData!.basicOverView!.cover!,
+                                      API.baseUrl+ profileFeedData!.basicOverView!.cover!,
                                       height: MediaQuery.of(context).size.height * 0.34,
                                       width: MediaQuery.of(context).size.width,
                                       fit: BoxFit.cover,

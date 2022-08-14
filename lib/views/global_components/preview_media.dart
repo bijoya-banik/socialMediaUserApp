@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:buddyscripts/models/feed/feed_model.dart';
+import 'package:buddyscripts/network/api.dart';
 import 'package:buddyscripts/services/asset_service.dart';
 import 'package:buddyscripts/views/global_components/k_video_component.dart';
 import 'package:buddyscripts/views/styles/b_style.dart';
@@ -115,7 +116,7 @@ class _PreviewMediaState extends State<PreviewMedia> {
                         ))
                     : widget.isNetworkAsset
                         ? Image.network(
-                            widget.networkAsset!.fileLoc!,
+                           API.baseUrl+ widget.networkAsset!.fileLoc!,
                             height: KSize.getHeight(context, 80),
                             width: MediaQuery.of(context).size.width * 0.22,
                             fit: BoxFit.cover,

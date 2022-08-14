@@ -1,6 +1,7 @@
 import 'package:buddyscripts/controller/feed/feed_details_controller.dart';
 import 'package:buddyscripts/custom_plugin/video_thumbnail_generator.dart';
 import 'package:buddyscripts/models/chats/chat_model.dart';
+import 'package:buddyscripts/network/api.dart';
 import 'package:buddyscripts/views/screens/home/feed_details_screen.dart';
 import 'package:buddyscripts/views/screens/messages/components/file_preview.dart';
 import 'package:buddyscripts/views/styles/b_style.dart';
@@ -56,7 +57,7 @@ class StatusPreviewCard extends ConsumerWidget {
                         // )
                         chatMetaData.feedMeta?.type == "image"
                             ? Image.network(
-                                chatMetaData.feedMeta?.fileLoc ?? "",
+                                 API.baseUrl+(chatMetaData.feedMeta?.fileLoc??""),
                                 fit: BoxFit.cover,
                                 width: MediaQuery.of(context).size.width * 0.6,
                                 height: KSize.getHeight(context, 120),

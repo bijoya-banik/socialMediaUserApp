@@ -734,27 +734,27 @@ class _CreateFeedScreenState extends ConsumerState<CreateFeedScreen> {
                               // print('allowStoryAdd =  $allowStoryAdd');
                             },
                           ),
-                        if (widget.feedType != FeedType.STORY)
-                          PostOptionsCard(
-                            title: 'Poll',
-                            bgColor: KColor.whiteConst,
-                            customIcon: Icon(MaterialIcons.bar_chart, size: 18, color: KColor.black87),
-                            onTap: () async {
-                              setState(() {
-                                bgColor = null;
-                                isBackground = false;
-                                if (assetManager.assets.isNotEmpty) {
-                                  ref.read(assetManagerProvider).removeAll();
-                                  isPoll = true;
-                                } else {
-                                  isPoll = true;
-                                }
-                                backGroundIndex = 1;
-                                allowStoryAdd = false;
-                                setPadding();
-                              });
-                            },
-                          ),
+                        // if (widget.feedType != FeedType.STORY)
+                        //   PostOptionsCard(
+                        //     title: 'Poll',
+                        //     bgColor: KColor.whiteConst,
+                        //     customIcon: Icon(MaterialIcons.bar_chart, size: 18, color: KColor.black87),
+                        //     onTap: () async {
+                        //       setState(() {
+                        //         bgColor = null;
+                        //         isBackground = false;
+                        //         if (assetManager.assets.isNotEmpty) {
+                        //           ref.read(assetManagerProvider).removeAll();
+                        //           isPoll = true;
+                        //         } else {
+                        //           isPoll = true;
+                        //         }
+                        //         backGroundIndex = 1;
+                        //         allowStoryAdd = false;
+                        //         setPadding();
+                        //       });
+                        //     },
+                        //   ),
                       ],
                     ),
                   ),

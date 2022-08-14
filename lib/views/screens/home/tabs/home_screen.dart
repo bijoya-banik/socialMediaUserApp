@@ -11,6 +11,7 @@ import 'package:buddyscripts/controller/pagination/scroll_state.dart';
 import 'package:buddyscripts/controller/story/all_story_controller.dart';
 import 'package:buddyscripts/controller/story/state/story_state.dart';
 import 'package:buddyscripts/controller/story/story_controller.dart';
+import 'package:buddyscripts/network/api.dart';
 import 'package:buddyscripts/services/app_mode.dart';
 import 'package:buddyscripts/views/global_components/k_content_unavailable_component.dart';
 import 'package:buddyscripts/views/global_components/loading_indicators/k_feed_loading_indicator.dart';
@@ -370,12 +371,12 @@ class StoryLoadingWidget extends ConsumerWidget {
                         fit: BoxFit.cover,
                       )
                     : Image.network(
-                        ref
+                     API.baseUrl+    (ref
                                 .read(userProvider.notifier)
                                 .userData
                                 ?.user
-                                ?.profilePic ??
-                            "",
+                                ?.profilePic??""),
+                           
                         height: 35,
                         width: 35,
                         fit: BoxFit.cover,

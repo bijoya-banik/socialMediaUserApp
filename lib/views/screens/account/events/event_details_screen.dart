@@ -14,6 +14,7 @@ import 'package:buddyscripts/controller/pagination/event/event_feed_tab.dart';
 import 'package:buddyscripts/controller/pagination/scroll_state.dart';
 import 'package:buddyscripts/models/auth/user_model.dart';
 import 'package:buddyscripts/models/event/event_feed_model.dart';
+import 'package:buddyscripts/network/api.dart';
 import 'package:buddyscripts/services/app_mode.dart';
 import 'package:buddyscripts/services/asset_service.dart';
 import 'package:buddyscripts/services/date_time_service.dart';
@@ -118,7 +119,7 @@ class EventDetailsScreen extends ConsumerWidget {
                                       child: ClipRRect(
                                         borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(8), bottomRight: Radius.circular(8)),
                                         child: Image.network(
-                                          eventFeedData.basicOverView!.cover!,
+                                         API.baseUrl+ eventFeedData.basicOverView!.cover!,
                                           height: MediaQuery.of(context).size.height * 0.345,
                                           width: MediaQuery.of(context).size.width,
                                           fit: BoxFit.cover,

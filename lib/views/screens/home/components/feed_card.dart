@@ -7,6 +7,7 @@ import 'package:buddyscripts/controller/feed/feed_reacted_users_controller.dart'
 import 'package:buddyscripts/custom_plugin/video_thumbnail_generator.dart';
 import 'package:buddyscripts/models/feed/feed_model.dart';
 import 'package:buddyscripts/models/reaction_button/reaction_model.dart';
+import 'package:buddyscripts/network/api.dart';
 import 'package:buddyscripts/services/app_mode.dart';
 import 'package:buddyscripts/services/date_time_service.dart';
 import 'package:buddyscripts/services/navigation_service.dart';
@@ -597,7 +598,7 @@ class _FeedCardState extends ConsumerState<FeedCard> {
                                                 const BorderRadius.all(
                                                     Radius.circular(6)),
                                             child: Image.network(
-                                              widget
+                                             API.baseUrl+  widget
                                                   .feedData!.files![0].fileLoc!,
                                               height:
                                                   KSize.getHeight(context, 250),
@@ -667,7 +668,7 @@ class _FeedCardState extends ConsumerState<FeedCard> {
                                                         child: Stack(
                                                           children: [
                                                             Image.network(
-                                                              widget
+                                                             API.baseUrl+  widget
                                                                   .feedData!
                                                                   .files![index]
                                                                   .fileLoc!,

@@ -1,6 +1,7 @@
 import 'package:buddyscripts/controller/feed/feed_controller.dart';
 import 'package:buddyscripts/custom_plugin/video_thumbnail_generator.dart';
 import 'package:buddyscripts/models/feed/feed_model.dart';
+import 'package:buddyscripts/network/api.dart';
 import 'package:buddyscripts/services/date_time_service.dart';
 import 'package:buddyscripts/views/global_components/feed_link_preview.dart';
 import 'package:buddyscripts/views/global_components/k_image_slider.dart';
@@ -87,7 +88,7 @@ class _SharedFeedCardState extends ConsumerState<SharedFeedCard> {
                       child: ClipRRect(
                         borderRadius: const BorderRadius.all(Radius.circular(6)),
                         child: Image.network(
-                          widget.feedData!.files![0].fileLoc!,
+                         API.baseUrl+  widget.feedData!.files![0].fileLoc!,
                           height: KSize.getHeight(context, 250),
                           width: MediaQuery.of(context).size.width,
                           fit: BoxFit.cover,
@@ -121,7 +122,7 @@ class _SharedFeedCardState extends ConsumerState<SharedFeedCard> {
                                     child: Stack(
                                       children: [
                                         Image.network(
-                                          widget.feedData!.files![index].fileLoc!,
+                                          API.baseUrl+ widget.feedData!.files![index].fileLoc!,
                                           height: KSize.getHeight(context, 140),
                                           width: MediaQuery.of(context).size.width * 0.35,
                                           fit: BoxFit.cover,

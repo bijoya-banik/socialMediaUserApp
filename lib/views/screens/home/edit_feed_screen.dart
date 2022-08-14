@@ -854,26 +854,26 @@ class _EditFeedScreenState extends ConsumerState<EditFeedScreen> {
                           });
                         },
                       ),
-                    if (widget.feedType != FeedType.STORY)
-                      PostOptionsCard(
-                        title: 'Poll',
-                        bgColor: KColor.whiteConst,
-                        customIcon: Icon(MaterialIcons.bar_chart, size: 18, color: KColor.black87),
-                        onTap: () async {
-                          setState(() {
-                            bgColor = null;
-                            isBackground = false;
-                            if (assetManager.assets.isNotEmpty) {
-                              ref.read(assetManagerProvider).removeAll();
-                              isPoll = true;
-                            } else {
-                              isPoll = true;
-                            }
-                            backGroundIndex = 1;
-                            setPadding();
-                          });
-                        },
-                      ),
+                    // if (widget.feedType != FeedType.STORY)
+                    //   PostOptionsCard(
+                    //     title: 'Poll',
+                    //     bgColor: KColor.whiteConst,
+                    //     customIcon: Icon(MaterialIcons.bar_chart, size: 18, color: KColor.black87),
+                    //     onTap: () async {
+                    //       setState(() {
+                    //         bgColor = null;
+                    //         isBackground = false;
+                    //         if (assetManager.assets.isNotEmpty) {
+                    //           ref.read(assetManagerProvider).removeAll();
+                    //           isPoll = true;
+                    //         } else {
+                    //           isPoll = true;
+                    //         }
+                    //         backGroundIndex = 1;
+                    //         setPadding();
+                    //       });
+                    //     },
+                    //   ),
                   ],
                 ),
               SizedBox(height: KSize.getHeight(context, 20)),

@@ -1,6 +1,7 @@
 import 'package:buddyscripts/controller/profile/profile_about_controller.dart';
 import 'package:buddyscripts/controller/profile/state/user_profile_about_state.dart';
 import 'package:buddyscripts/models/profile/profile_overview_model.dart';
+import 'package:buddyscripts/network/api.dart';
 import 'package:buddyscripts/views/global_components/user_profile_picture.dart';
 import 'package:buddyscripts/views/styles/b_style.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +44,7 @@ class ProfilePhotoCoverComponent extends StatelessWidget {
             ClipRRect(
                 borderRadius: BorderRadius.circular(8),
                 child: Image.network(
-                  profileAboutData!.cover!,
+                   API.baseUrl+profileAboutData!.cover!,
                   height: KSize.getHeight(context, 175),
                   width: MediaQuery.of(context).size.width,
                   fit: BoxFit.cover,

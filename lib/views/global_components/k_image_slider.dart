@@ -1,3 +1,4 @@
+import 'package:buddyscripts/network/api.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -57,7 +58,7 @@ class _KImageSliderViewState extends State<KImageSliderView> {
                         width: MediaQuery.of(context).size.height,
                         alignment: Alignment.center,
                         child: Image.network(
-                          imgUrl,
+                          API.baseUrl+imgUrl,
                           fit: BoxFit.fitWidth,
                           loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
                             if (loadingProgress == null) return child;

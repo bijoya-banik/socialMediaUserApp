@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:buddyscripts/constants/asset_path.dart';
+import 'package:buddyscripts/network/api.dart';
 import 'package:buddyscripts/services/navigation_service.dart';
 import 'package:buddyscripts/services/socket_service.dart';
 import 'package:buddyscripts/views/screens/call_agora/call_user_model.dart';
@@ -259,7 +260,7 @@ class _CallUserScreenState extends State<CallUserScreen> {
                             : ColorFiltered(
                                 colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.2), BlendMode.dstATop),
                                 child: Image.network(
-                                  widget.friend?.profilePic,
+                                 API.baseUrl+  widget.friend?.profilePic,
                                   width: MediaQuery.of(context).size.width,
                                   height: MediaQuery.of(context).size.height,
                                   fit: BoxFit.cover,
@@ -374,7 +375,7 @@ class _CallUserScreenState extends State<CallUserScreen> {
                                 : ColorFiltered(
                                     colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.3), BlendMode.dstATop),
                                     child: Image.network(
-                                      widget.friend?.profilePic,
+                                      API.baseUrl+ widget.friend?.profilePic,
                                       width: MediaQuery.of(context).size.width,
                                       height: MediaQuery.of(context).size.height,
                                       fit: BoxFit.cover,
@@ -504,7 +505,7 @@ class _CallUserScreenState extends State<CallUserScreen> {
                                 ColorFiltered(
                                   colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.3), BlendMode.dstATop),
                                   child: Image.network(
-                                    widget.friend?.profilePic,
+                                   API.baseUrl+  widget.friend?.profilePic,
                                     width: MediaQuery.of(context).size.width,
                                     height: MediaQuery.of(context).size.height,
                                     fit: BoxFit.cover,

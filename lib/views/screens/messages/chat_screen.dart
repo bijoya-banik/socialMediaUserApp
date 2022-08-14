@@ -10,6 +10,7 @@ import 'package:buddyscripts/controller/chat/state/chat_state.dart';
 import 'package:buddyscripts/controller/chat/group_chat_member_controller.dart';
 import 'package:buddyscripts/custom_plugin/video_thumbnail_generator.dart';
 import 'package:buddyscripts/models/chats/chat_model.dart';
+import 'package:buddyscripts/network/api.dart';
 import 'package:buddyscripts/services/app_mode.dart';
 import 'package:buddyscripts/services/asset_service.dart';
 import 'package:buddyscripts/services/debouncer.dart';
@@ -39,7 +40,7 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:swipe_to/swipe_to.dart';
 
-const Token = '006a3240716c7be4887bb2ccb2c006daec8IAAXtPkR1FYW4dCscIJDyZe0Wjg2lijKwkSv47sDDpPx5SNkemwAAAAAEABUm4+slaSkYgEAAQCUpKRi';
+const Token = '006a3240716c7be4887bb2ccb2c006daec8IACUs0J5YcEeoCEwhOYDQvgLFnFldMvHEHvoEFkD+11f+iNkemwAAAAAEACLq5A0tYz6YgEAAQC0jPpi';
 const channel = 'callTest';
 bool userGetCall = false;
 dynamic callEnded = ValueNotifier<bool>(false);
@@ -666,7 +667,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> with TickerProviderStat
                                                                               fit: BoxFit.cover,
                                                                             )
                                                                           : replyfiles[0].type == "image"
-                                                                              ? Image.network(replyfiles[0].fileLoc!, width: 45, height: 45)
+                                                                              ? Image.network( API.baseUrl+replyfiles[0].fileLoc!, width: 45, height: 45)
                                                                               : Padding(
                                                                                   padding: const EdgeInsets.all(8.0),
                                                                                   child: Icon(Icons.file_copy, color: KColor.black87),

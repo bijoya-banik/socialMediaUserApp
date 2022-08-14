@@ -13,6 +13,7 @@ import 'package:buddyscripts/controller/profile/state/user_profile_feed_state.da
 import 'package:buddyscripts/models/chats/conversations_model.dart';
 import 'package:buddyscripts/models/profile/profile_feed_model.dart';
 import 'package:buddyscripts/models/profile/profile_overview_model.dart';
+import 'package:buddyscripts/network/api.dart';
 import 'package:buddyscripts/services/app_mode.dart';
 import 'package:buddyscripts/views/global_components/dialogs/confirmation_dialog_content.dart';
 import 'package:buddyscripts/views/global_components/dialogs/k_dialog.dart';
@@ -95,7 +96,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                                       child: ClipRRect(
                                         borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(8), bottomRight: Radius.circular(8)),
                                         child: Image.network(
-                                          profileFeedData.basicOverView!.cover!,
+                                         API.baseUrl+  profileFeedData.basicOverView!.cover!,
                                           height: MediaQuery.of(context).size.height * 0.34,
                                           width: MediaQuery.of(context).size.width,
                                           fit: BoxFit.cover,
@@ -216,19 +217,19 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                                         SizedBox(width: KSize.getWidth(context, 8)),
                                         InkWell(
                                           onTap: () {
-                                            // ref.read(chatProvider.notifier).fetchChat(
-                                            //     id: profileFeedData.basicOverView!.id, group: 0, onlineChat: profileFeedData.basicOverView!.isOnline);
-                                            // Navigator.push(
-                                            //     context,
-                                            //     CupertinoPageRoute(
-                                            //         builder: (context) => ChatScreen(
-                                            //               id: profileFeedData.basicOverView!.id,
-                                            //               firstName: profileFeedData.basicOverView!.firstName,
-                                            //               lastName: profileFeedData.basicOverView!.lastName,
-                                            //               userName: profileFeedData.basicOverView!.username,
-                                            //               profilePic: profileFeedData.basicOverView!.profilePic,
-                                            //               conversation: ConversationsModel(isGroup: 0),
-                                            //             )));
+                                            ref.read(chatProvider.notifier).fetchChat(
+                                                id: profileFeedData.basicOverView!.id, group: 0, onlineChat: profileFeedData.basicOverView!.isOnline);
+                                            Navigator.push(
+                                                context,
+                                                CupertinoPageRoute(
+                                                    builder: (context) => ChatScreen(
+                                                          id: profileFeedData.basicOverView!.id,
+                                                          firstName: profileFeedData.basicOverView!.firstName,
+                                                          lastName: profileFeedData.basicOverView!.lastName,
+                                                          userName: profileFeedData.basicOverView!.username,
+                                                          profilePic: profileFeedData.basicOverView!.profilePic,
+                                                          conversation: ConversationsModel(isGroup: 0),
+                                                        )));
                                           },
                                           child: Container(
                                             height: KSize.getHeight(context, 45),
